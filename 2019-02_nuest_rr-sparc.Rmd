@@ -1,0 +1,334 @@
+---
+title: "Reproducible Research in GIScience"
+subtitle: "challenges | observations | approaches"
+author: "Daniel Nüst, `daniel.nuest@uni-muenster.de`"
+date: "R&R SPARC workshop | Phoenix, AZ | Feb 11 2019"
+output:
+  xaringan::moon_reader:
+    css: ["default", "wwu-theme.css"]
+    nature:
+      countIncrementalSlides: false
+      beforeInit: ["macros.js"]
+      ratio: "16:9"
+header_includes:
+  #- \usepackage{amssymb}
+---
+
+```{r pdf_webshot, include=FALSE, eval=FALSE}
+library("webshot")
+current_file <- basename(rstudioapi::getSourceEditorContext()$path)
+system(paste0("cat ", current_file, " | grep -v '^--$' > print.Rmd"))
+rmarkdown::render('print.Rmd', 'xaringan::moon_reader')
+file_name <- paste0("file://", normalizePath("print.html"))
+webshot(url = file_name, file = stringr::str_replace(current_file, "\\.Rmd", "\\.pdf"), delay = 2)
+system("rm -r print.Rmd print.html print_files")
+```
+
+---
+class: wwu-lightgreen,center,middle
+
+# Challenges
+
+---
+class: center
+# Virtual Labs
+
+https://www.google.com/search?safe=off&client=ubuntu&hs=GFH&channel=fs&biw=1920&bih=955&tbm=isch&sa=1&ei=t1gKXIO7PMy3kwWnla6QDg&q=dirty+untidy+lab&oq=dirty+untidy+lab&gs_l=img.3...15240.16225..16704...0.0..0.257.401.0j1j1......1....1..gws-wiz-img.DptdfDxtLWo
+
+---
+# Open is not enough
+
+https://www.nature.com/articles/s41567-018-0342-2#Tab2
+
+---
+class: wwu-lightgreen,center,middle
+
+# Observations
+
+---
+class: wwu-darkblue,center,middle
+# We have to do better
+
+???
+
+we made technical evaluations
+we did surveys
+
+---
+# Computational reproducibility in geoscientific papers
+
+paper markus
+The State of Reproducibility in the Computational Geosciences
+
+---
+# In-depth examination of spatiotemporal figures in open reproducible research
+
+paper markus
+
+---
+# Reproducible research and GIScience: an evaluation using AGILE conference papers
+
+- practical evaluation
+- survey
+
+---
+class: wwu-lightgreen,center,middle
+
+# Approaches
+
+--
+
+Technology & Infrastructure
+
+--
+
+Organisations & habits
+
+---
+class: wwu-darkblue,center,middle
+# Technology & infrastructure
+
+---
+# Containerisation
+
+VMs
+
+Docker, containerit, dockter
+
+Preservation of containers
+
+"rocker/geospatial: a flexible runtime environment for geoscientific data analysis""
+
+---
+# Example: Enabling Reproducible OBIA with Open-Source Software in Docker Containers
+
+paper w/ Christian Knoth
+
+---
+# Ongoing work: geosimulation
+
+...
+
+---
+# Notebooks & Binder
+
+...
+
+---
+# Example: Open Environmental Data Analysis
+
+EGU poster senseBox & OpenSenseMap
+
+...
+
+---
+# ReproZip
+
+...
+
+---
+# Other packaging
+
+packrat
+virtual environments
+most importantly: packaging systems of languages (R packages, PyPI packages, env.yml, Anaconda, pip freeze)
+
+---
+# o2r & ERCs
+
+...
+
+briefly show platform, reference: ERC paper
+
+
+???
+
+people always ask me: what makes this geo? why do you this at the institute for geoinformatics?
+
+---
+class: wwu-lightblue,center,middle
+# What is spatial about reproducibility?
+
+???
+
+take a break, "interlude"
+
+---
+# GIS & GIScience specialities
+
+poster "Executable research compendia in geoscience research infrastructures" > we have geoservices (for a long time, top down stuff)
+
+large datasets (and just getting used to it)
+
+big vendor for GIS
+
+strong open source community
+
+poster with Marius: Reproducible Earth observation analytics: challenges, ideas, and a study case on containerized land use change detection
+
+
+
+???
+
+yes, I do think that you cannot really do science with ArcGIS (there are MANY good applications for it of course)
+
+**an incomplete list**
+
+---
+# Creating interactive scientific publications using bindings
+
+preprint Markus
+
+---
+# openEO
+
+? ? ?
+
+---
+# Research Compendia
+
+research-compendium.science
+
+---
+class: wwu-darkblue,center,middle
+# Organisations & habits
+
+???
+
+---
+# Researchers become developers
+
+not only about coding and git
+
+using platforms
+way how communicate and collaborate
+
+"Sharing environmental models: An Approach using GitHub repositories and Web Processing Services" (2016 poster)
+
+---
+# Research is software
+
+RSE
+
+RSEng
+
+---
+# Transparency
+
+open notebook science
+
+open science
+
+---
+# Repositories
+
+re3data.org
+
+OSF + preregistration
+
+---
+# Open X
+
+how open are GIScience journals? make a quick survey using Sherpa/RoMEO about giscience journals!
+
+open review
+open access
+
+---
+# Institutes, research groups, labs & conferences
+
+final chapter of AGILE paper
+
+???
+
+one of our recommendations has a chance to become true!
+
+---
+# AGILE Initiative
+
+...
+
+
+---
+# Carpentries
+
+...
+
+---
+# Individual scholarship
+
+open access reviews only
+
+???
+
+UCLA lib asking staff to consider stop reviewing for elsevier (tweet vicky)
+
+---
+# Summary
+
+Challenges:
+
+- ...
+
+Observations:
+
+- ...
+
+Approaches:
+
+- ...
+
+---
+# References
+
+...
+
+???
+
+but what you should really take with you...
+
+---
+# Openness + transparency + developer = ♥
+
+transfea: a win win: working more effective and more transparent at the same time
+
+---
+class: wwu-cassis, center, middle
+
+## Thank you! What are your questions?
+
+--
+
+.pull-left[
+![:scale 120%](https://media.giphy.com/media/jN0ygssTH2hoI/giphy.gif)
+<br/><small><a href="https://giphy.com/gifs/agree-jN0ygssTH2hoI">via GIPHY</a></small>
+]
+
+--
+
+.pull-right[
+![:scale 120%](https://media.giphy.com/media/VcWnY3R6YWVtC/giphy.gif)
+<br/><small><a href="https://giphy.com/gifs/mrw-girlfriend-salem-VcWnY3R6YWVtC">via GIPHY</a></small>
+]
+
+???
+
+mike pence:
+<div style="width:100%;height:0;padding-bottom:94%;position:relative;"><iframe src="https://giphy.com/embed/l0HlPuzH58vnrnBHG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<br/><small><a href="https://giphy.com/gifs/election2016-no-debate-l0HlPuzH58vnrnBHG">via GIPHY</a></small>
+
+or mabe not mike pence... https://giphy.com/gifs/election2016-no-debate-l0HlPuzH58vnrnBHG
+
+------
+
+.pull-left[
+https://o2r.info
+]
+
+.pull-right[
+http://o2r.info/reproducible-agile
+]
+
+???
+
+...
